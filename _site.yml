@@ -1,0 +1,25 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Overview"
+      href: overview.html
+    - text: "Exploratory Analysis"
+      href: exploratory_data.html
+    - text: "Additional Analysis"
+      href: additional_analysis.html
+    - text: "Map"
+      href: Map2017.html
+    - text: "Report"
+      href: report.html
+    - text: "Our Team"
+      href: ourteam.html
+    - icon: fab fa-youtube
+      href: website_screen_cast.html
+    - icon: fa-envelope fa-lg
+      href: mailto:zyt1102@cumc.columbia.edu
+    - icon: fa-github fa-lg
+      href: https://github.com/yiwenzhao1/p8105_final_project_chicago.github.io
+output:
+  html_document

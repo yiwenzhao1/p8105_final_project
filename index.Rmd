@@ -1,0 +1,16 @@
+---
+title: "<center>**Gotham City**<center/>"
+output: 
+  html_document:
+    theme:  flatly
+    css: index.css
+    includes:
+      after_body: footer.html
+---
+<center>
+
+##### **Group members: Shengzhi Luo, Minxiu Shi, Yitian Zhang, Yiwen Zhao**
+
+<img src="images/Chicago2.jpg" style="width:90%">
+
+Image of Chicago from [4K Wallpapers](https://free4kwallpapers.com/travel-world/chicago-night-wallpaper--XAWv)

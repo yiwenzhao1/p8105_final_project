@@ -1,0 +1,61 @@
+---
+title: "**Overview**"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme:  flatly
+    css: index.css
+    includes:
+      after_body: footer.html
+---
+  
+## **Motivation**
+  
+  Due to the cases that happened in Chicago recently, the crime rates in different areas of Chicago caught our attention. Violent incidents in Chicago are of increasing concern over the last few years, and we are interested in looking at what might be associated with increased violence in Chicago. We are concerned about people’s living safety in the city and motivated to find safer neighborhoods for living in Chicago.
+
+## **Related work**
+
+  Apart from that, news came that Zheng, a 24-year-old native of of China’s Sichuan province, was shot and killed on November 9th during a robbery in the 900 block of East 54th Place, which was in the vicinity of University of Chicago's campus. As his compatriots, we were all overwhelmed by unbearable sorrow and loss. And such tragedies kept occuring every now and then. Therefore, our concern towards the crimes in Chicago grew.
+  
+  [News Source](https://blockclubchicago.org/2021/11/15/man-charged-with-murder-in-killing-of-uchicago-graduate-in-hyde-park/)
+  
+## **Data**
+
+#### **Data Source**
+
+6-year Chicago Crime data records are retrieved from Chicago’s official public data [Chicago Data Portal](https://data.cityofchicago.org). 
+
+* 6-year Chicago crime data records (2016 - 2021):
+  - [2016](https://data.cityofchicago.org/Public-Safety/Crimes-2016/kf95-mnd6/data)
+  - [2017](https://data.cityofchicago.org/Public-Safety/Crimes-2017/d62x-nvdr/data)
+  - [2018](https://data.cityofchicago.org/Public-Safety/Crimes-2018/3i3m-jwuy/data)
+  - [2019](https://data.cityofchicago.org/Public-Safety/Crimes-2019/w98m-zvie/data)
+  - [2020](https://data.cityofchicago.org/Public-Safety/Crimes-2020/qzdf-xmn8/data)
+  - [2021](https://data.cityofchicago.org/Public-Safety/Crimes-2021/dwme-t96c/data)
+
+This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2006 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are shown at the block level only and specific locations are not identified.  Each record represents one criminal case. This dataset contains approximately 2 million crime records and details 22 variables such as ID, number, data, neighborhood, IUCR, and primary type for each case.
+
+#### **Data Processing and Clean**
+
+#### **Data Description**
+
+The resulting data file of `data_clean` contains 45498 criminal records and 24 variables.
+The list below is the description of our interested variables:
+ 
+ * `data`. The date of occurrence of crime.
+ * `block`. The block where the crime occurred.
+ * `primary_type`. The primary description of crime.
+ * `description`. Detail description to the crime.
+ * `location decription`. Detail description about where the crime occurred.
+ * `latitude`. The latitude of occurrence of crime.
+ * `longitude`. The longitude of occurrence of crime.
+
+## **Research Question**
+
+Question 1:
+
+## **Main Results**
+
+## **Conclusion**
+
