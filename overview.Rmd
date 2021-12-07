@@ -41,13 +41,22 @@ theme_set(theme_minimal() + theme(legend.position = "bottom"))
 
 <p align="center">
 ## **Motivation**
+
+<p align="center">
+![pic.](/Users/yitian/Desktop/p8105_final_project/外源图片/Gotham_City.jpg){width=100% height=60%}  </p>
+<p align=" center", p style="font-family: times, serif; font-size:11pt; font-style:italic">
+Photo retrived from [DC Extended Universe Wiki](https://dcextendeduniverse.fandom.com/wiki/Gotham_City)
+</p>
+  Gotham City, a city of sin that exists in comic and film works, is wildly considered to be created based on New York. This is because from a lexical history perspective, Gotham City is an alias for New York. This alias first appeared in Washington Irving's mocking periodical "Salmagundi" in 1807. Frank Miller, the author of Batman's Dark Knight Revisited, also said, "Metropolis is New York by day; Gotham City is New York by night."
   
-  Due to the cases that happened in Chicago recently, the crime rates in different areas of Chicago caught our attention. Violent incidents in Chicago are of increasing concern over the last few years, and we are interested in looking at what might be associated with increased violence in Chicago. We are concerned about people’s living safety in the city and motivated to find safer neighborhoods for living in Chicago.
+  However, the longtimde author of Batman series Neal Adams thought  Gotham City was more like Chicago-based in the early comics. A city that combines prosperity with high crime rates. From the towering skyscrapers to the trash-strewn back alleys. Brilliant neon lights at night  can't hide the darkness beneath the glitz. These characteristics of Chicago set the tone for Gotham City, the shadowy capital of evil.
+  
+  Due to a shooting case that happened in Chicago recently, the crime rates in different areas of Chicago caught our attention. Violent incidents in Chicago are of increasing concern over the last few years, and we are interested in looking at what might be associated with increased violence in Chicago. We are concerned about people’s living safety in the city and motivated to find safer neighborhoods for living in Chicago.
 
 ## **Related work**
 
 <p align="center">
-![pic.](/Users/yitian/Desktop/p8105_final_project/外源图片/Untitled-collage-41.jpg){width=60% height=60%}  </p>
+![pic1.](/Users/yitian/Desktop/p8105_final_project/外源图片/Untitled-collage-41.jpg){width=60% height=60%}  </p>
 <p align=" center", p style="font-family: times, serif; font-size:11pt; font-style:italic">
 An 18-year-old man was charged with robbing and murdering Shaoxiong “Dennis” Zheng (right), 24, in the 900 block of East 54th Place (left) Tuesday afternoon
 </p>
