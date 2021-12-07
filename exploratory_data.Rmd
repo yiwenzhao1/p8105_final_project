@@ -42,7 +42,7 @@ We could see that, the peak number of the crimes over time is 2020 with 10824 ca
 
 ```{r}
 crime_full=
-  read.csv("./Data/data_clean.csv")
+  read.csv("./data/data_clean.csv")
 
 count_overtime = 
   crime_full %>% 
@@ -99,7 +99,7 @@ ggplotly(heatmap_plot + theme(legend.position = "none"))
 This word clouding figure shows the top number of crimes. According to this figure, Battery is the top crime which happens the most time in past 6 years. Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others' intentionally physical harm.
 
 ```{r, warning=FALSE, message=FALSE}
-crime = read_csv("./Data/data_clean.csv") %>%
+crime = read_csv("./data/data_clean.csv") %>%
    group_by(primary_type) %>% 
    summarise(n_crime = n())
    set.seed(555)
@@ -117,7 +117,7 @@ title( "Figure 3: Wordclouding of the top number of crimes during 6 years")
 #### **The Number of Crimes Happens in Different Locations Over Six Years**
 ```{r, warning=FALSE, message=FALSE}
 ## clean a new dataset with ranking of numbers and adjusted numbers
-crime_loc = read.csv("./Data/data_clean.csv") %>%
+crime_loc = read.csv("./data/data_clean.csv") %>%
   group_by(year,location_description) %>% 
   summarise(n = n()) %>% 
   mutate(rank = rank(-n),
