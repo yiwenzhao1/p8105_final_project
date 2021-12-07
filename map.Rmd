@@ -1,9 +1,7 @@
 ---
-title: "**Map**"
+title: "**Crime Map**"
 output: 
   html_document:
-    toc: true
-    toc_float: true
     theme:  flatly
     css: index.css
     code_folding: hide
@@ -33,7 +31,8 @@ library(readr)
 full_df = read_csv("./data/data_clean.csv")
 ```
 
-
+**Hint:** Zoom in and out to see more crime information on the map.
+<center>
 ```{r, message=FALSE}
 map_full = 
   full_df %>%
@@ -42,9 +41,10 @@ map_full =
   addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") %>%
   addLayersControl(baseGroups = c("Toner Lite", "World Imagery")) %>%
   addMarkers(clusterOptions = markerClusterOptions()) %>%
-  setView(-87.646918, 41.869871, zoom = 16)
+  setView(-87.646918, 41.869871, zoom = 14)
 
 map_full
 ```
+</center>
 
 **Description: **As the map shows, we found that crimes centrally happened in the middle and south of Chicago, with over 20.000 crimes respectively. The amount of crimes in north district was the least but still summed up to 5,000 in the last 5 years. Thus, it is fairly enough to conclude that the middle and south districts are comparatively more dangerous while the north is safer although its number of crimes still shocked.
