@@ -54,4 +54,10 @@ From our perspetive, Chicago's persistently high crime rate is inextricably link
 
 It is also worth noting that some school areas, such as the University of Chicago and the University of Illinois at Urbana-Champaign, are also surrounded by gangs, which adds some potential danger to the students of these schools.
 
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Chicago Gang Map" src="//www.arcgis.com/apps/Embed/index.html?webmap=964ea583b0864531a729d95eaec5841a&extent=-88.0542,41.6429,-87.2961,42.0148&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe></div>
+<p align=" center">
+<style>.embed-container {position: relative; padding-bottom: 87%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="300" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Chicago Gang Map" src="//www.arcgis.com/apps/Embed/index.html?webmap=964ea583b0864531a729d95eaec5841a&extent=-88.0542,41.6547,-87.2741,42.0148&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe></div>
+</p>
+
+<p align=" center", p style="font-family: times, serif; font-size:11pt; font-style:italic">
+Chicago Gang Map retrieved from [ArcGIS](https://www.arcgis.com/home/webmap/viewer.html?webmap=964ea583b0864531a729d95eaec5841a)
+</p>
