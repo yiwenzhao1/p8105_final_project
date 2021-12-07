@@ -40,7 +40,6 @@ theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ```
 
 <p align="center">
-  
 ## **Motivation**
   
   Due to the cases that happened in Chicago recently, the crime rates in different areas of Chicago caught our attention. Violent incidents in Chicago are of increasing concern over the last few years, and we are interested in looking at what might be associated with increased violence in Chicago. We are concerned about people’s living safety in the city and motivated to find safer neighborhoods for living in Chicago.
@@ -146,5 +145,4 @@ Question 1:
 ## **Main Results**
 
 ## **Conclusion**
-
 </p>
