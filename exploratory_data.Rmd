@@ -164,8 +164,6 @@ anim_plot = staticplot +
        subtitle = "Top 10 Location")  
 
 animate(anim_plot, 150, fps = 15, width = 780, height = 560)
-
-anim_save("anim_plot.gif")
 ```
 
 ```
