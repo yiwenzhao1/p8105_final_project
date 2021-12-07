@@ -25,49 +25,67 @@ body {
 
 <body>
 
-<h1 id="data-clean">Data Clean</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clean data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>crime_2016 <span class="ot">=</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">read.csv</span>(<span class="st">&quot;./data/Crimes_-_2016.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(arrest<span class="sc">==</span><span class="st">&quot;true&quot;</span>,domestic<span class="sc">==</span><span class="st">&quot;true&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>crime_2017 <span class="ot">=</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">read.csv</span>(<span class="st">&quot;./data/Crimes_-_2017.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(arrest<span class="sc">==</span><span class="st">&quot;true&quot;</span>,domestic<span class="sc">==</span><span class="st">&quot;true&quot;</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>crime_2018 <span class="ot">=</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">read.csv</span>(<span class="st">&quot;./data/Crimes_-_2018.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(arrest<span class="sc">==</span><span class="st">&quot;true&quot;</span>,domestic<span class="sc">==</span><span class="st">&quot;true&quot;</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>crime_2019 <span class="ot">=</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>   <span class="fu">read.csv</span>(<span class="st">&quot;./data/Crimes_-_2019.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>   janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(arrest<span class="sc">==</span><span class="st">&quot;true&quot;</span>,domestic<span class="sc">==</span><span class="st">&quot;true&quot;</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>crime_2020 <span class="ot">=</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>   <span class="fu">read.csv</span>(<span class="st">&quot;./data/Crimes_-_2020.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>   <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>   janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(arrest<span class="sc">==</span><span class="st">&quot;true&quot;</span>,domestic<span class="sc">==</span><span class="st">&quot;true&quot;</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>crime_2021 <span class="ot">=</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>   <span class="fu">read.csv</span>(<span class="st">&quot;./data/Crimes_-_2021.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>   <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>   janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(arrest<span class="sc">==</span><span class="st">&quot;true&quot;</span>,domestic<span class="sc">==</span><span class="st">&quot;true&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>full_df<span class="ot">=</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>,<span class="fu">list</span>(crime_2016,crime_2017,crime_2018,crime_2019,crime_2020,crime_2020,crime_2021)) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">date=</span><span class="fu">strptime</span>(date, <span class="st">&quot;%m/%d/%Y %I:%M:%S %p&quot;</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">date=</span><span class="fu">as.Date</span>(date,<span class="st">&quot;%Y-%m-%d&quot;</span>),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">year =</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(date, <span class="at">format =</span> <span class="st">&quot;%Y&quot;</span>)),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">month =</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(date, <span class="at">format =</span> <span class="st">&quot;%m&quot;</span>)),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">day =</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(date, <span class="at">format =</span> <span class="st">&quot;%d&quot;</span>))</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">relocate</span>(year,month,day,<span class="at">.before =</span> date)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_df,<span class="at">file=</span><span class="st">&quot;./data/data_clean.csv&quot;</span>)</span></code></pre></div>
+<h1 id="p8105-final-project-proposal">P8105 Final Project Proposal</h1>
+<p>11/10/2021</p>
+<h2 id="the-group-members">The group members</h2>
+<ul>
+<li>Minxiu Shi (ms6358)</li>
+<li>Shengzhi Luo (sl5009)</li>
+<li>Yiwen Zhao (yz4187)</li>
+<li>Yitian Zhang (yz4185)</li>
+</ul>
+<h2 id="the-tentative-project-title">The tentative project title</h2>
+<p>Gotham City</p>
+<h2 id="motivation">Motivation</h2>
+<p>Due to the cases that happened in Chicago recently, the crime rates in different areas of Chicago caught our attention. Violent incidents in Chicago are of increasing concern over the last few years, and we are interested in looking at what might be associated with increased violence in Chicago. We are concerned about people’s living safety in the city and motivated to find safer neighborhoods for living in Chicago.</p>
+<h2 id="the-intended-final-products">The intended final products</h2>
+<ul>
+<li><p>Website with static visualizations for statistical analyses, along with interactive map(s)</p></li>
+<li><p>Website will include links to data sources and interpretations of findings</p></li>
+<li><p>Screencast explaining website and analyses</p></li>
+</ul>
+<h2 id="the-anticipated-data-sources">The anticipated data sources</h2>
+<ul>
+<li><p><a href="https://www.kaggle.com/chicago/chicago-crime">https://www.kaggle.com/chicago/chicago-crime</a></p></li>
+<li><p><a href="https://data.cityofchicago.org/Public-Safety/Crimes-Map/dfnk-7re6">https://data.cityofchicago.org/Public-Safety/Crimes-Map/dfnk-7re6</a></p></li>
+</ul>
+<h2 id="the-planned-analyses--visualizations--coding-challenges">The planned analyses / visualizations / coding challenges</h2>
+<p>We hope to look at crime trends in Chicago over time, as well as crime trends geographically. Other factors may be taken into consideration for analysis, such as demographic characteristics, accessibility to police reporting, and time of incidents. A challenge that is not inherently a coding challenge but that is a data completeness challenge is the fact that a large proportion of crimes in Chicago are not yet arrested.</p>
+<h2 id="planned-timeline">Planned Timeline</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Due Dates</th>
+<th>Scheduled Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11/13</td>
+<td>Final project Proposal</td>
+</tr>
+<tr class="even">
+<td>11/14-11/19</td>
+<td>Proposal Review &amp; Get approved from instructor team</td>
+</tr>
+<tr class="odd">
+<td>11/20</td>
+<td>Make all data to be cleaned and ready for use</td>
+</tr>
+<tr class="even">
+<td>11/21-11/27</td>
+<td>Finish visualization and analysis</td>
+</tr>
+<tr class="odd">
+<td>11/28-12/4</td>
+<td>Working on webpages</td>
+</tr>
+<tr class="even">
+<td>12/5-12/11</td>
+<td>Final editing and finish up deliverables</td>
+</tr>
+</tbody>
+</table>
 
 </body>
 </html>
