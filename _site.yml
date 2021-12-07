@@ -10,7 +10,7 @@ navbar:
     - text: "Additional Analysis"
       href: additional_analysis.html
     - text: "Map"
-      href: Map2017.html
+      href: map.html
     - text: "Report"
       href: report.html
     - text: "Our Team"
