@@ -166,3 +166,5 @@ anim_plot = staticplot +
 animate(anim_plot, 150, fps = 15, width = 780, height = 560)
 ```
 
+***
+This word clouding figure shows the top number of crimes. According to this figure, Battery is the top crime which happens the most time in past 6 years. Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others' intentionally physical harm.
