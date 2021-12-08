@@ -36,7 +36,7 @@ Trends in Time{.storyboard}
 
 ```{r, echo=FALSE}
 crime_full=
-  read.csv("/Users/zhao/Desktop/p8105_final_project/data/data_clean.csv")
+  read.csv("./data/data_clean.csv")
 
 count_overtime = 
   crime_full %>% 
@@ -97,7 +97,7 @@ Word Clouding{.storyboard}
 ### Word Clouding of Crime Types: The top number of crimes appeared in 6 years
 
 ```{r, warning=FALSE, message=FALSE}
-crime = read_csv("/Users/zhao/Desktop/p8105_final_project/data/data_clean.csv") %>%
+crime = read_csv("./data/data_clean.csv") %>%
    group_by(primary_type) %>% 
    summarise(n_crime = n())
    set.seed(555)
@@ -115,11 +115,61 @@ Trends in Location{.storyboard}
 =========================================
 ### The Number of Crimes Happens in Different Locations Over Six Years
 
+```{r, warning=FALSE, message=FALSE}
+## clean a new dataset with ranking of numbers and adjusted numbers
+crime_loc = read.csv("./data/data_clean.csv") %>%
+  group_by(year,location_description) %>% 
+  summarise(n = n()) %>% 
+  mutate(rank = rank(-n),
+         Value_rel = n/n[rank == 1],
+         Value_lbl = paste0(" ",n)) %>% 
+  filter(rank <= 10)
 
+## form multiple static plots
+staticplot = ggplot(crime_loc, aes(rank, group = location_description, 
+                fill = as.factor(location_description), color = as.factor(location_description))) +
+  geom_tile(aes(y = n / 2,
+                height = n,
+                width = 0.9), alpha = 0.8, color = NA) +
+  geom_text(aes(y = 0, label = paste(location_description, " ")), vjust = 0.2, hjust = 1) +
+  geom_text(aes(y = n,label = Value_lbl, hjust = 0)) +
+  coord_flip(clip = "off", expand = FALSE) +
+  scale_x_reverse() +
+  scale_fill_viridis_d(option = "B") +
+  scale_color_viridis_d(option = "B") +
+  theme_minimal() +
+  theme(axis.line = element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position = "none",
+        panel.background = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_line( size = .1, color = "grey" ),
+        panel.grid.minor.x = element_line( size = .1, color = "grey" ),
+        plot.title = element_text(size = 20, hjust = 0.5, face = "bold", vjust = 2),
+        plot.subtitle = element_text(size = 14, hjust = 0.5, face = "italic", color = "grey"),
+        plot.background = element_blank(),
+        plot.margin = margin(2,2, 2, 4, "cm"))
 
+## convert static plots to animated ones
+anim_plot = staticplot + 
+  transition_states(year, transition_length = 4, state_length = 1) +
+  ease_aes('sine-in-out') +
+  labs(title = 'Figure 3: Number of Crime in Chicago from 2016 to 2021 : {closest_state}',
+       subtitle = "Top 10 Location")  
 
-```{r}
-rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
+animate(anim_plot, 150, fps = 15, width = 780, height = 560)
 ```
 
+***
+We also sorted and ranked the data, and compiled the top 10 locations with high criminal incidence from 2016 to 2021  into a dynamic bar graph. Through this motion chart, we can visually observe the names of the crime areas, the number of crime incidents, and their changing trends.
+
+We can note that apartments, residence, streets and sidewalks are firmly in the top 4 from 2016 to 2020. They have been the locations with high crime rates during the six-year period. This result also coincides with our previous study of the types of crime that occur most frequently. The top three crime types in Chicago in our study are battery, assault, and other offenses, and these crime types are indeed more likely to occur in these locations.
+
+It is also interesting to note that the number of crimes in apartment and residence had a large increase and reached a peak in 2020 and then dropped sharply to an average level in 2021, while other locations also experiencing a small decrease in crime during 2020. We believe that this trend may be related to the home quarantine policy for the Covid-19 epidemic in 2020.
 
