@@ -10,5 +10,17 @@ output:
       after_body: footer.html
 ---
 
-## **Members:**
+## **Group Members:**
+
+Minxiu Shi     ms6358
+Shengzhi Luo   sl5009
+Yitian Zhang   yz4185
+Yiwen Zhao     yz4187
+
+## **Github repository**
+
+The Github repository for the whole project:
+https://github.com/yiwenzhao1/p8105_final_project.
+
+The Github repository for this website: https://yiwenzhao1.github.io/p8105_final_project/.
 

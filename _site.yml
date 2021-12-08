@@ -12,7 +12,7 @@ navbar:
     - text: "Map"
       href: map.html
     - text: "Report"
-      href: https://github.com/yiwenzhao1/p8105_final_project/blob/main/Project_Report.Rmd
+      href: https://github.com/yiwenzhao1/p8105_final_project_report/blob/main/Project_Report.md
     - text: "Our Team"
       href: ourteam.html
     - text: "Data"
