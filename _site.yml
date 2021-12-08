@@ -13,7 +13,7 @@ navbar:
       href: map.html
     - text: "Report"
       href: https://github.com/yiwenzhao1/p8105_final_project_report/blob/main/Project_Report.md
-    - text: "Our Team"
+    - text: "About"
       href: ourteam.html
     - text: "Data"
       href: https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2/data
