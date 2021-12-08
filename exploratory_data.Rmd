@@ -36,7 +36,7 @@ theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ### **Trends in Time**
 #### **The Number of Crimes Over Six Years**
 
-he figure below shows that the number of crimes in Chicago change over the most recent six years. The range of the number of crimes per year is between 4629 and 10824 from 2016 to 2021. 
+The figure below shows that the number of crimes in Chicago change over the most recent six years. The range of the number of crimes per year is between 4629 and 10824 from 2016 to 2021. 
 
 We could see that, the peak number of the crimes over time is 2020 with 10824 cases. Basically, the trend went smooth from 2016 to 2020 and went down after 2020.
 
@@ -107,8 +107,6 @@ crime = read_csv("./data/data_clean.csv") %>%
       max.words=200, random.order=FALSE, rot.per=0.35, 
       colors=brewer.pal(8, "Dark2"))
 title( "Figure 3: Wordclouding of the top number of crimes during 6 years")
-
-
 ```
  
  
@@ -165,7 +163,4 @@ anim_plot = staticplot +
 
 animate(anim_plot, 150, fps = 15, width = 780, height = 560)
 ```
-
-```
-
 

@@ -1,0 +1,125 @@
+---
+title: "Exploratory Analysis Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    social: menu
+    source: embed
+    theme: flatly
+---
+
+```{r setup}
+library(tidyverse)
+library(leaflet)
+library(lubridate)
+library(ggExtra)
+library(plotly)
+library(maps)
+library(mapdata)
+library(ggthemes)
+library(mapproj)
+library(ggthemes)
+library(gganimate)
+library(viridis)
+library(wordcloud)
+library(RColorBrewer)
+library(tm)
+library(dplyr)
+library(scales)
+library(gganimate)
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+```
+
+
+Trends in Time{.storyboard}
+=========================================
+### The Number of Crimes Over Six Years
+
+```{r, echo=FALSE}
+crime_full=
+  read.csv("/Users/zhao/Desktop/p8105_final_project/data/data_clean.csv")
+
+count_overtime = 
+  crime_full %>% 
+  group_by(year) %>% 
+  summarize(cases = n())
+count_overtime %>%
+  plot_ly(x = ~year, y = ~cases, type = "scatter",mode = "lines+markers")  %>% 
+  layout(
+    title = "Figure 1: The number of different crimes trends over time in Chicago.",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Total crime cases in Chicago")
+  )
+```
+
+***
+The figure shows that the number of crimes in Chicago change over the most recent six years. The range of the number of crimes per year is between 4629 and 10824 from 2016 to 2021. 
+
+We could see that, the peak number of the crimes over time is 2020 with 10824 cases. Basically, the trend went smooth from 2016 to 2020 and went down after 2020.
+
+Heat Map{.storyboard}
+=========================================
+### The trend of crime happens in different months and years
+
+```{r, message=FALSE}
+heatmap_plot = crime_full %>%
+  mutate(month = month.abb[as.numeric(month)],
+         month = fct_rev(factor(month, levels = month.abb))) %>% 
+  group_by(year, month, day) %>% 
+  summarise(n_crimes = n()) %>% 
+  mutate(day = as.numeric(day))
+ 
+heatmap_plot = heatmap_plot %>% 
+  ggplot(aes(x = day, y = month, fill = n_crimes))+
+  geom_tile(color = "white",size = 0.1) + 
+  scale_fill_viridis(name = "Number of Crimes",option = "C") + 
+  facet_grid(.~ year) +
+  scale_x_continuous(breaks = c(1,10,20,31)) + 
+  theme_minimal(base_size = 8) + 
+  labs(title = "Figure 2: Number of Crimes from 2016 to 2021", x = "Day", y = "Month") + 
+  theme(legend.position = "bottom")+
+  theme(plot.title = element_text(size = 14))+
+  theme(axis.text.y = element_text(size = 6)) +
+  theme(strip.background = element_rect(colour = "white"))+
+  theme(plot.title = element_text(hjust = 0))+
+  theme(axis.ticks = element_blank())+
+  theme(axis.text = element_text(size = 7))+
+  theme(legend.title = element_text(size = 8))+
+  theme(legend.text = element_text(size = 6))+
+  removeGrid()
+ggplotly(heatmap_plot + theme(legend.position = "none"))
+```
+
+***
+This heat map clearly shows that the crime rate has a significant increase in 2020, and the significant increase of crime in Chicago is probably associated with the COVID-19 prevalence. In 2021, the total crime rates is a little bit lower than previous year. In general, there is no significant differences on crime rates with diffeernt months. 
+
+Word Clouding{.storyboard}
+=========================================
+### Word Clouding of Crime Types: The top number of crimes appeared in 6 years
+
+```{r, warning=FALSE, message=FALSE}
+crime = read_csv("/Users/zhao/Desktop/p8105_final_project/data/data_clean.csv") %>%
+   group_by(primary_type) %>% 
+   summarise(n_crime = n())
+   set.seed(555)
+   wordcloud(words = crime$primary_type, freq = crime$n_crime, scale = c(3, .8),min.freq = 1,
+      max.words=200, random.order=FALSE, rot.per=0.35, 
+      colors=brewer.pal(8, "Dark2"))
+title( "Figure 3: Wordclouding of the top number of crimes during 6 years")
+```
+
+***
+This word clouding figure shows the top number of crimes. According to this figure, Battery is the top crime which happens the most time in past 6 years. Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others' intentionally physical harm.
+
+
+Trends in Location{.storyboard}
+=========================================
+### The Number of Crimes Happens in Different Locations Over Six Years
+
+
+
+
+```{r}
+rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
+```
+
+

@@ -6,7 +6,7 @@ navbar:
     - text: "Overview"
       href: overview.html
     - text: "Exploratory Analysis"
-      href: exploratory_data.html
+      href: dashboard.html
     - text: "Additional Analysis"
       href: additional_analysis.html
     - text: "Map"
