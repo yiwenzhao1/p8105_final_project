@@ -11,7 +11,7 @@ navbar:
       href: additional_analysis.html
     - text: "Map"
       href: map.html
-    - text: "About"
+    - text: "Our Team"
       href: ourteam.html
     - text: "Report"
       href: https://github.com/yiwenzhao1/p8105_final_project_report/blob/main/Project_Report.md
