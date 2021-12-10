@@ -1,18 +1,19 @@
 ---
-title: "Addional Analysis"
+title: "Statistical Analysis"
 output: 
   html_document:
     toc: true
     toc_float: true
     theme:  flatly
     css: index.css
+    code_folding: hide
     includes:
       after_body: footer.html
 ---
 
-Our team make additional analysis on .... since....
-
 ## **Research Questions:**
+
+### Association between the number of crime cases and weather in Chicago 
 
 ## **Data Source:**
 
@@ -65,6 +66,13 @@ datatable(head(full_df,100), rownames = FALSE, filter = "top",
 ```
 
 
+## **Regression Analysis:**
+
+When analyzing the association, we limited data to July, 2019.
+
+Our model included the following variables: number of crime cases, temperature difference, temperature of the body feeling, value of dew, difference of feeling-like temperature, humidity and the speed of wind.
+
+
 ```{r , echo = FALSE}
 weather_analysis =
   full_df %>%  
@@ -80,5 +88,5 @@ weather_analysis %>%
                       "p-value"))
 ```
 
-
+The finding shows that the p-values are all lager than 0.005, failing to reject the null hypothesis that there's no evidence showing the association between the numebr of crime cases and the weather in Chicago. We can conclude that safety in Chicago has nothing to do with the weather
 
