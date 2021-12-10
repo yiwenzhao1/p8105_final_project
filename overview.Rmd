@@ -153,11 +153,9 @@ The list below is the description of our interested variables:
 
 ## **Research Questions**
 
-* Question 1: How does the crime amount change over these 5 years? Is there any significant change in the number of crimes? What are the possible reasons that cause the change?
-
-* Question 2: In what kind of location in Chicago does the most amount of crime happen? Which type of crime is most likely to occur in Chicago?
-
-* Question 3: According to the data analysis, what suggestions we can give on the security in Chicago?
+In our study, we aim to investigate how does the crime amount change over these 5 years? Is there any significant change in the number of crimes? What are the possible reasons that cause the change? In what kind of location in Chicago does the most amount of crime happen? Which type of crime is most likely to occur in Chicago?
+In addition, we want to explore the association between weather and the number of crime occurring in Chicago.
+Through our visual analytics, we can quickly analyze crime incidents and find patterns related to crime incidents to provide inspiration to preventing crime, which can helping Chicago to effectively improve the occurrence of crime incidents and help them create a safer city.
 
 ## **Main Results**
 
