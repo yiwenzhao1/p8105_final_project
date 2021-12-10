@@ -13,7 +13,7 @@
 
 <meta name="date" content="2021-12-10" />
 
-<title>Two Years</title>
+<title>two_year</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -296,14 +296,19 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Two Years</h1>
+<h1 class="title toc-ignore">two_year</h1>
 <h4 class="author">Yiwen Zhao</h4>
 <h4 class="date">12/10/2021</h4>
 
 </div>
 
 
-<pre class="r"><code>crime_2019 =
+<pre class="r"><code>crime_2018 =
+   read.csv(&quot;./data/Crimes_-_2018.csv&quot;) %&gt;% 
+   drop_na() %&gt;% 
+   janitor::clean_names() %&gt;%
+   filter(arrest==&quot;true&quot;,domestic==&quot;false&quot;)
+crime_2019 =
    read.csv(&quot;./data/Crimes_-_2019.csv&quot;) %&gt;% 
    drop_na() %&gt;% 
    janitor::clean_names() %&gt;%
@@ -314,7 +319,7 @@ crime_2020 =
    janitor::clean_names() %&gt;%
    filter(arrest==&quot;true&quot;,domestic==&quot;false&quot;)</code></pre>
 <pre class="r"><code>two_year_df=
-   do.call(&quot;rbind&quot;,list(crime_2019,crime_2020)) %&gt;% 
+   do.call(&quot;rbind&quot;,list(crime_2018, crime_2019,crime_2020)) %&gt;% 
    mutate(
       date=strptime(date, &quot;%m/%d/%Y %I:%M:%S %p&quot;),
       date=as.Date(date,&quot;%Y-%m-%d&quot;),

@@ -1,0 +1,43 @@
+---
+title: "three_year"
+author: "Yiwen Zhao"
+date: "12/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+
+
+```{r roughly data cleaning, message = FALSE}
+crime_2018 =
+   read.csv("./data/Crimes_-_2018.csv") %>% 
+   drop_na() %>% 
+   janitor::clean_names() %>%
+   filter(arrest=="true",domestic=="false")
+crime_2019 =
+   read.csv("./data/Crimes_-_2019.csv") %>% 
+   drop_na() %>% 
+   janitor::clean_names() %>%
+   filter(arrest=="true",domestic=="false")
+crime_2020 =
+   read.csv("./data/Crimes_-_2020.csv") %>% 
+   drop_na() %>% 
+   janitor::clean_names() %>%
+   filter(arrest=="true",domestic=="false")
+```
+
+```{r}
+two_year_df=
+   do.call("rbind",list(crime_2018, crime_2019,crime_2020)) %>% 
+   mutate(
+      date=strptime(date, "%m/%d/%Y %I:%M:%S %p"),
+      date=as.Date(date,"%Y-%m-%d"),
+      year = as.numeric(format(date, format = "%Y")),
+      month = as.numeric(format(date, format = "%m")),
+      day = as.numeric(format(date, format = "%d"))
+      ) %>% 
+   relocate(year,month,day,.before = date)
+write.csv(two_year_df,file="./data/three_year_data.csv")
+```
