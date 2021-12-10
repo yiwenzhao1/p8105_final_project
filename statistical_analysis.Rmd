@@ -34,14 +34,11 @@ scale_fill_discrete = scale_fill_viridis_d
 theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ```
 
-```{r}
-weather_df=
-  read.csv("./data/weather.csv")
-```
-
 
 ```{r, message = FALSE, warning = FALSE}
 ## load data
+weather_df=
+  read.csv("./data/weather.csv")
 five_df = 
   read_csv("./data/five_year_data.csv") %>% 
   filter(year=="2019",
@@ -57,13 +54,11 @@ full_df=
     tempdiff=tempmax-tempmin,
     feelsdiff=feelslikemax-feelslikemin
   )
-```
-
-
-```{r}
 datatable(head(full_df,100), rownames = FALSE, filter = "top", 
           options = list(pageLength = 5, scrollX = T, Width = 100))
 ```
+
+
 
 
 ## **Regression Analysis:**
@@ -73,7 +68,7 @@ When analyzing the association, we limited data to July, 2019.
 Our model included the following variables: number of crime cases, temperature difference, temperature of the body feeling, value of dew, difference of feeling-like temperature, humidity and the speed of wind.
 
 
-```{r , echo = FALSE}
+```{r}
 weather_analysis =
   full_df %>%  
   lm(n_cases ~  tempdiff + temp + feelslike+ dew +feelsdiff+
