@@ -335,7 +335,6 @@ crime_2021 =
       date=as.Date(date,&quot;%Y-%m-%d&quot;),
       year = as.numeric(format(date, format = &quot;%Y&quot;)),
       month = as.numeric(format(date, format = &quot;%m&quot;)),
-      month=month.abb[month],
       day = as.numeric(format(date, format = &quot;%d&quot;))
       ) %&gt;% 
    relocate(year,month,day,.before = date)
