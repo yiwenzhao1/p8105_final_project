@@ -36,7 +36,7 @@ crime_full=read.csv("/Users/yitian/Desktop/p8105_final_project/data/five_year_da
 
 Trends in Time{.storyboard}
 =========================================
-### The Number of Crimes Over Five Years
+### The Number of Crimes Monthly Trends Over 5 Years
 
 ```{r, warning=FALSE, message=FALSE}
 count_overtime = 
@@ -59,7 +59,7 @@ We could see that, the peak number of the crimes over time is 2020 with 10824 ca
 
 Heat Map{.storyboard}
 =========================================
-### The Monthly Density Trends of Crimes from 2017 to 2021 in Chicago
+### The Monthly Density Trends of Crimes Over 5 Years in Chicago
 
 ```{r, message=FALSE}
 heatmap_plot = crime_full %>%
@@ -95,7 +95,7 @@ This heat map clearly shows that the crime rate has a significant increase in 20
 
 Word Clouding{.storyboard}
 =========================================
-### Word Clouding of Crime Types: The top number of crimes appeared in 6 years
+### Word Clouding of Crime Types: The top number of crimes appeared in 5 years
 
 ```{r, warning=FALSE, message=FALSE}
 crime = crime_full %>%
@@ -105,7 +105,7 @@ crime = crime_full %>%
    wordcloud(words = crime$primary_type, freq = crime$n_crime, scale = c(3, .8),min.freq = 1,
       max.words=200, random.order=FALSE, rot.per=0.35, 
       colors=brewer.pal(8, "Dark2"))
-title( "Figure 3: Wordclouding of the top number of crimes during 6 years")
+title( "Figure 3: Wordclouding of the top Number of Crimes Over 5 Years")
 ```
 
 ***
@@ -114,7 +114,7 @@ This word clouding figure shows the top number of crimes. According to this figu
 
 Trends in Location{.storyboard}
 =========================================
-### Top 10 Locations With High Criminal Incidence From 2017 to 2021
+### Top 10 Locations With High Criminal Incidence Over 5 Years
 
 ```{r, warning=FALSE, message=FALSE}
 ## clean a new dataset with ranking of numbers and adjusted numbers
@@ -161,10 +161,10 @@ staticplot = ggplot(crime_loc, aes(rank, group = location_description,
 anim_plot = staticplot + 
   transition_states(month, transition_length = 4, state_length = 1) +
   ease_aes('sine-in-out') +
-  labs(title = 'Figure 4: Number of Crime in Chicago from 2017 to 2021 : {closest_state}',
+  labs(title = 'Figure 4: Number of Crime in Chicago Over 5 Years : {closest_state}',
        subtitle = "Top 10 Location")  
 
-animate(anim_plot, 150, fps = 15, width = 780, height = 560)
+animate(anim_plot, 150, fps = 20, width = 780, height = 560)
 ```
 
 ***

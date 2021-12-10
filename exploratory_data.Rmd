@@ -34,7 +34,7 @@ theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ```
 
 ### **Trends in Time**
-#### **The Number of Crimes Over Six Years**
+#### **The Number of Crimes Over Five Years**
 
 The figure below shows that the number of crimes in Chicago change over the most recent six years. The range of the number of crimes per year is between 4629 and 10824 from 2016 to 2021. 
 
