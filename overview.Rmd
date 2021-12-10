@@ -155,13 +155,11 @@ The data file of `weather` containing the detail weather conditions, such as tem
 `weather` dataset was retrieved from [Weather Query Builder.](https://www.visualcrossing.com/weather/weather-data-services)
 
 ## **Research Questions**
-
-In our study, we aim to investigate how does the crime amount change over these 5 years? Is there any significant change in the number of crimes? What are the possible reasons that cause the change? In what kind of location in Chicago does the most amount of crime happen? Which type of crime is most likely to occur in Chicago?
+   In our study, we aim to investigate how does the crime amount change over these 5 years? Is there any significant change in the number of crimes? What are the possible reasons that cause the change? In what kind of location in Chicago does the most amount of crime happen? Which type of crime is most likely to occur in Chicago?
 In addition, we want to explore the association between weather and the number of crime occurring in Chicago.
-Through our visual analytics, we can quickly analyze crime incidents and find patterns related to crime incidents to provide inspiration to preventing crime, which can helping Chicago to effectively improve the occurrence of crime incidents and help them create a safer city.
+   Through our visual analytics, we can quickly analyze crime incidents and find patterns related to crime incidents to provide inspiration to preventing crime, which can helping Chicago to effectively improve the occurrence of crime incidents and help them create a safer city.
 
 ## **Main Results**
-
 The range of the number of crimes per year is between 4,629 and 10,824 from 2016 to 2021. The peak number of the crimes over time is in 2020 with 10,824 cases. The crime rate has a significant increase in 2020, and the significant increase of crime in Chicago is probably associated with the COVID-19 prevalence. 
 
 In Chicago, the most amount of crimes happens in apartments, residence, streets and sidewalks.The top three crime types in Chicago in our study are battery, assault, and other offenses, and these crime types are indeed more likely to occur in these locations.Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others’ intentionally physical harm. 
@@ -173,3 +171,4 @@ According to the distribution of Crime Rate From 2017 to 2021 in Chicago, the mo
 
 
 </p>
+

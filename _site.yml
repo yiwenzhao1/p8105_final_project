@@ -7,8 +7,8 @@ navbar:
       href: overview.html
     - text: "Exploratory Analysis"
       href: dashboard.html
-    - text: "Additional Analysis"
-      href: additional_analysis.html
+    - text: "Statistical Analysis"
+      href: statistical_analysis.html
     - text: "Map"
       href: map.html
     - text: "Our Team"
