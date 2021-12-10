@@ -168,5 +168,9 @@ animate(anim_plot, 150, fps = 20, width = 780, height = 560)
 ```
 
 ***
+<font-size:12pt>
+
 In addition, our group also sorted and ranked the data, and compiled the top 10 locations with high criminal incidence from 2017 to 2021 into a dynamic bar graph to get a more in-depth understanding of the crime situation. Through this motion chart, we can visually observe the names of the crime areas, the number of crime incidents, and their changing trends.It is clear that streets and sidewalks are the locations with high crime rates during the five-year period.
+
+</p>
 
