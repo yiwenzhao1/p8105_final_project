@@ -2,7 +2,7 @@
 title: "Five_year"
 author: "Yiwen Zhao"
 date: "12/10/2021"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +16,7 @@ crime_2017 =
    drop_na() %>% 
    janitor::clean_names() %>%
    filter(arrest=="true",domestic=="false")
-rime_2018 =
+crime_2018 =
    read.csv("./data/Crimes_-_2018.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
