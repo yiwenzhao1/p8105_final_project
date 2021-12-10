@@ -42,6 +42,7 @@ Trends in Time{.storyboard}
 count_overtime = 
   crime_full %>% 
   group_by(year,month) %>% 
+  mutate(month=factor(month)) %>% 
   summarize(cases = n())
 count_overtime %>%
   plot_ly(x = ~month, y = ~cases, color=~year, type = "scatter",mode = "lines+markers")  %>% 
@@ -63,7 +64,8 @@ Heat Map{.storyboard}
 
 ```{r, message=FALSE}
 heatmap_plot = crime_full %>%
-  mutate(month = fct_rev(factor(month, levels = month.abb))) %>% 
+  mutate(month = month.abb[as.numeric(month)],
+         month = fct_rev(factor(month, levels = month.abb))) %>% 
   group_by(year, month, day) %>% 
   summarise(n_crimes = n()) %>% 
   mutate(day = as.numeric(day))
