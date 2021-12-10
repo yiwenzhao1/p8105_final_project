@@ -25,7 +25,7 @@ library(readr)
 ```
 
 
-### **Map: Distribution of Crime Rate From 2016 to 2021 in Chicago**
+### **Map: Distribution of Crime Rate From 2017 to 2021 in Chicago**
 
 ```{r, message=FALSE}
 full_df = read_csv("./data/five_year_data.csv")
