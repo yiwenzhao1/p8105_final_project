@@ -29,25 +29,26 @@ library(gganimate)
 theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ```
 
+```{r}
+crime_full=read.csv("/Users/yitian/Desktop/p8105_final_project/data/five_year_data.csv")
+```
+
 
 Trends in Time{.storyboard}
 =========================================
-### The Number of Crimes Over Six Years
+### The Number of Crimes Over Five Years
 
-```{r, echo=FALSE}
-crime_full=
-  read.csv("/Users/yitian/Desktop/p8105_final_project/data/data_clean.csv")
-
+```{r, warning=FALSE, message=FALSE}
 count_overtime = 
   crime_full %>% 
-  group_by(year) %>% 
+  group_by(year,month) %>% 
   summarize(cases = n())
 count_overtime %>%
-  plot_ly(x = ~year, y = ~cases, type = "scatter",mode = "lines+markers")  %>% 
+  plot_ly(x = ~month, y = ~cases, color=~year, type = "scatter",mode = "lines+markers")  %>% 
   layout(
-    title = "Figure 1: The number of different crimes trends over time in Chicago.",
-    xaxis = list(title = "Year"),
-    yaxis = list(title = "Total crime cases in Chicago")
+    title = "Figure 1: The Number of Crime Monthly Trends From 2017 to 2021 in Chicago.",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Total Crime Cases")
   )
 ```
 
@@ -58,7 +59,7 @@ We could see that, the peak number of the crimes over time is 2020 with 10824 ca
 
 Heat Map{.storyboard}
 =========================================
-### The trend of crime happens in different months and years
+### The Monthly Density Trends of Crimes from 2017 to 2021 in Chicago
 
 ```{r, message=FALSE}
 heatmap_plot = crime_full %>%
@@ -75,7 +76,7 @@ heatmap_plot = heatmap_plot %>%
   facet_grid(.~ year) +
   scale_x_continuous(breaks = c(1,10,20,31)) + 
   theme_minimal(base_size = 8) + 
-  labs(title = "Figure 2: Number of Crimes from 2016 to 2021", x = "Day", y = "Month") + 
+  labs(title = "Figure 2: The Monthly Density Trends of Crimes from 2017 to 2021 in Chicago", x = "Day", y = "Month") + 
   theme(legend.position = "bottom")+
   theme(plot.title = element_text(size = 14))+
   theme(axis.text.y = element_text(size = 6)) +
@@ -97,7 +98,7 @@ Word Clouding{.storyboard}
 ### Word Clouding of Crime Types: The top number of crimes appeared in 6 years
 
 ```{r, warning=FALSE, message=FALSE}
-crime = read_csv("/Users/yitian/Desktop/p8105_final_project/data/data_clean.csv") %>%
+crime = crime_full %>%
    group_by(primary_type) %>% 
    summarise(n_crime = n())
    set.seed(555)
@@ -113,12 +114,12 @@ This word clouding figure shows the top number of crimes. According to this figu
 
 Trends in Location{.storyboard}
 =========================================
-### The Number of Crimes Happens in Different Locations Over Six Years
+### Top 10 Locations With High Criminal Incidence From 2017 to 2021
 
 ```{r, warning=FALSE, message=FALSE}
 ## clean a new dataset with ranking of numbers and adjusted numbers
-crime_loc = read.csv("/Users/yitian/Desktop/p8105_final_project/data/data_clean.csv") %>%
-  group_by(year,location_description) %>% 
+crime_loc = crime_full %>%
+  group_by(month,location_description) %>% 
   summarise(n = n()) %>% 
   mutate(rank = rank(-n),
          Value_rel = n/n[rank == 1],
@@ -158,9 +159,9 @@ staticplot = ggplot(crime_loc, aes(rank, group = location_description,
 
 ## convert static plots to animated ones
 anim_plot = staticplot + 
-  transition_states(year, transition_length = 4, state_length = 1) +
+  transition_states(month, transition_length = 4, state_length = 1) +
   ease_aes('sine-in-out') +
-  labs(title = 'Figure 3: Number of Crime in Chicago from 2016 to 2021 : {closest_state}',
+  labs(title = 'Figure 4: Number of Crime in Chicago from 2017 to 2021 : {closest_state}',
        subtitle = "Top 10 Location")  
 
 animate(anim_plot, 150, fps = 15, width = 780, height = 560)
