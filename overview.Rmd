@@ -140,7 +140,7 @@ datatable(tail(show_data,100), rownames = FALSE, filter = "top",
 
 #### **Data Description**
 
-The resulting data file of `data_clean` contains 45498 criminal records and 24 variables.
+The resulting data file of `data_clean` contains 184349 criminal records and 24 variables.
 The list below is the description of our interested variables:
  
  * `data`. The date of occurrence of crime.
@@ -150,6 +150,9 @@ The list below is the description of our interested variables:
  * `location decription`. Detail description about where the crime occurred.
  * `latitude`. The latitude of occurrence of crime.
  * `longitude`. The longitude of occurrence of crime.
+
+The data file of `weather` containing the detail weather conditions, such as temperature, dew, humidity etc. from July 1st to July 31th in Chicago. We will use this dataset to explore the association between weather and criminal incidence in Chicago. 
+`weather` dataset was retrieved from [Weather Query Builder.](https://www.visualcrossing.com/weather/weather-data-services)
 
 ## **Research Questions**
 
@@ -163,7 +166,7 @@ The range of the number of crimes per year is between 4,629 and 10,824 from 2016
 
 In Chicago, the most amount of crimes happens in apartments, residence, streets and sidewalks.The top three crime types in Chicago in our study are battery, assault, and other offenses, and these crime types are indeed more likely to occur in these locations.Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others’ intentionally physical harm. 
 
-According to the distribution of Crime Rate From 2016 to 2021 in Chicago, the most of crimes is concentrated in the central and south side of this city. Chicago’s persistently high crime rate is inextricably linked to the density of gangs. It is reasonable for us to suspect that the concentration of gangs is one of the reasons for the high level of violence in Chicago. Thus, we would like to suggest people who live in southern Chicago to be beware of the personal safety.
+According to the distribution of Crime Rate From 2017 to 2021 in Chicago, the most of crimes is concentrated in the central and south side of this city. Chicago’s persistently high crime rate is inextricably linked to the density of gangs. It is reasonable for us to suspect that the concentration of gangs is one of the reasons for the high level of violence in Chicago. Thus, we would like to suggest people who live in southern Chicago to be beware of the personal safety.
 
 ## **Conclusion**
 
