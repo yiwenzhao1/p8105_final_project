@@ -38,7 +38,7 @@ Due to the cases that happened in Chicago recently, the crime rates in different
 
 ## The planned analyses / visualizations / coding challenges
 
-  We hope to look at crime trends in Chicago over time, as well as crime trends geographically. Other factors may be taken into consideration for analysis, such as demographic characteristics, accessibility to police reporting, and time of incidents. A challenge that is not inherently a coding challenge but that is a data completeness challenge is the fact that a large proportion of crimes in Chicago are not yet arrested.
+  We hope to look at crime trends in Chicago over time, as well as crime trends geographically. Other factors may be taken into consideration for analysis, such as demographic characteristics, accessibility to police reporting, and time of incidents. A challenge that is not inherently a coding challenge but that is a data completeness challenge is the fact that excessive crimes pile up every year, resulting a huge dataset which requires us to do necessary selection and cleaning. Also, we have to figure out the variables we need including divison and filtering.
 
 
 ## Planned Timeline

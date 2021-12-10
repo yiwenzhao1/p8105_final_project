@@ -153,7 +153,7 @@ The list below is the description of our interested variables:
 
 ## **Research Questions**
 
-* Question 1: How does the crime amount change over these 6 years? Is there any significant change in the number of crimes? What are the possible reasons that cause the change?
+* Question 1: How does the crime amount change over these 5 years? Is there any significant change in the number of crimes? What are the possible reasons that cause the change?
 
 * Question 2: In what kind of location in Chicago does the most amount of crime happen? Which type of crime is most likely to occur in Chicago?
 
