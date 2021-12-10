@@ -1,5 +1,5 @@
 ---
-title: "three_year"
+title: "Five_year"
 author: "Yiwen Zhao"
 date: "12/10/2021"
 output: html_document
@@ -11,7 +11,12 @@ library(tidyverse)
 
 
 ```{r roughly data cleaning, message = FALSE}
-crime_2018 =
+crime_2017 =
+   read.csv("./data/Crimes_-_2017.csv") %>% 
+   drop_na() %>% 
+   janitor::clean_names() %>%
+   filter(arrest=="true",domestic=="false")
+rime_2018 =
    read.csv("./data/Crimes_-_2018.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
@@ -26,11 +31,16 @@ crime_2020 =
    drop_na() %>% 
    janitor::clean_names() %>%
    filter(arrest=="true",domestic=="false")
+crime_2021 =
+   read.csv("./data/Crimes_-_2021.csv") %>% 
+   drop_na() %>% 
+   janitor::clean_names() %>%
+   filter(arrest=="true",domestic=="false")
 ```
 
 ```{r}
-two_year_df=
-   do.call("rbind",list(crime_2018, crime_2019,crime_2020)) %>% 
+five_year_df=
+   do.call("rbind",list(crime_2017, crime_2018, crime_2019,crime_2020, crime_2021)) %>% 
    mutate(
       date=strptime(date, "%m/%d/%Y %I:%M:%S %p"),
       date=as.Date(date,"%Y-%m-%d"),
@@ -39,5 +49,5 @@ two_year_df=
       day = as.numeric(format(date, format = "%d"))
       ) %>% 
    relocate(year,month,day,.before = date)
-write.csv(two_year_df,file="./data/three_year_data.csv")
+write.csv(five_year_df,file="./data/five_year_data.csv")
 ```
