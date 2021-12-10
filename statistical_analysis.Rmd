@@ -11,13 +11,11 @@ output:
       after_body: footer.html
 ---
 
+<img src="./images/weather.jpg" style="width:45%">
+
 ## **Research Questions:**
 
 ### Association between the number of crime cases and weather in Chicago 
-
-<p align="center">
-![pic.](./images/weather.jpg){width=100% height=60%}  
-</p>
 
 ## **Data Source:**
 
