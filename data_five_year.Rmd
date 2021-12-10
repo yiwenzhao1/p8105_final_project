@@ -46,6 +46,7 @@ five_year_df=
       date=as.Date(date,"%Y-%m-%d"),
       year = as.numeric(format(date, format = "%Y")),
       month = as.numeric(format(date, format = "%m")),
+      month=month.abb[month],
       day = as.numeric(format(date, format = "%d"))
       ) %>% 
    relocate(year,month,day,.before = date)
