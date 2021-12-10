@@ -36,7 +36,7 @@ Trends in Time{.storyboard}
 
 ```{r, echo=FALSE}
 crime_full=
-  read.csv("./data/data_clean.csv")
+  read.csv("/Users/yitian/Desktop/p8105_final_project/data/data_clean.csv")
 
 count_overtime = 
   crime_full %>% 
@@ -97,7 +97,7 @@ Word Clouding{.storyboard}
 ### Word Clouding of Crime Types: The top number of crimes appeared in 6 years
 
 ```{r, warning=FALSE, message=FALSE}
-crime = read_csv("./data/data_clean.csv") %>%
+crime = read_csv("/Users/yitian/Desktop/p8105_final_project/data/data_clean.csv") %>%
    group_by(primary_type) %>% 
    summarise(n_crime = n())
    set.seed(555)
@@ -117,7 +117,7 @@ Trends in Location{.storyboard}
 
 ```{r, warning=FALSE, message=FALSE}
 ## clean a new dataset with ranking of numbers and adjusted numbers
-crime_loc = read.csv("./data/data_clean.csv") %>%
+crime_loc = read.csv("/Users/yitian/Desktop/p8105_final_project/data/data_clean.csv") %>%
   group_by(year,location_description) %>% 
   summarise(n = n()) %>% 
   mutate(rank = rank(-n),
