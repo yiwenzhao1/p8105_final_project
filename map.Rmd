@@ -28,7 +28,7 @@ library(readr)
 ### **Map: Distribution of Crime Rate From 2016 to 2021 in Chicago**
 
 ```{r, message=FALSE}
-full_df = read_csv("./data/data_clean.csv")
+full_df = read_csv("./data/five_year_data.csv")
 ```
 <p align=" center", p style="font-family: times, serif; font-size:11pt; font-style:italic">
 **Hint:** By zooming in and out to check detailed rate of crime in different areas of Chicago.
@@ -48,7 +48,7 @@ map_full
 ```
 </center>
 
-As the map shown, we found that crimes is concentrated in the central and south side of Chicago, with a gradual decrease outward. over 20,000 crimes have been accumulated over the 6 years. The amount of crimes in north district was the least but still summed up to 5,000 in the last 5 years. Thus, it is fairly enough to conclude that the middle and south districts are comparatively more dangerous while the north is safer although its number of crimes still shocked. 
+As the map shown, we found that crimes is concentrated in the central and south side of Chicago, with a gradual decrease outward. over 185,000 crimes have been accumulated over the 5 years. The amount of crimes in north district was the least but still summed up to 1,809 in the last 5 years. Thus, it is fairly enough to conclude that the middle and south districts are comparatively more dangerous while the north is safer although its number of crimes still shocked.
 
 From our perspective, Chicago's persistently high crime rate is inextricably linked to the density of gangs. Chicago is considered to be the most gang-influenced city, with over 60 medium or large gangs, more than 700 factions or branches, and over 100,000 active gang members. Below is a detailed map of Chicago's gang distribution which includes the name of each gang and their frequently gathering areas, we can clearly observe that gangs are concentrated in the central and southern parts of the city. This characteristic coincides with our crime rate distribution. As a result, it is reasonable for us to suspect that the concentration of gangs is one of the reasons for the high level of violence in Chicago. 
 
