@@ -42,7 +42,6 @@ Trends in Time{.storyboard}
 count_overtime = 
   crime_full %>% 
   group_by(year,month) %>% 
-  mutate(month=factor(month)) %>% 
   summarize(cases = n())
 count_overtime %>%
   plot_ly(x = ~month, y = ~cases, color=~year, type = "scatter",mode = "lines+markers")  %>% 
@@ -110,8 +109,8 @@ title( "Figure 3: Wordclouding of the top Number of Crimes Over 5 Years")
 ```
 
 ***
-This word clouding figure shows the top number of crimes. According to this figure, Battery is the top crime which happens the most time in past 6 years. Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others' intentionally physical harm.
-
+After reviewing the number trends and density of crime, our group also want to dig further about the primary type of crime with high incidence in Chicago. As a result, we decide to make a word clouding to give greater prominence to crime type that appear more frequently.
+According to this figure 3, the most frequently occurring type of crime in Chicago from 2017 to 2021 is narcotics, followed by weapons violation, theft, battery, assault, other offense, and criminal trespass etc.
 
 Trends in Location{.storyboard}
 =========================================
@@ -162,16 +161,12 @@ staticplot = ggplot(crime_loc, aes(rank, group = location_description,
 anim_plot = staticplot + 
   transition_states(month, transition_length = 4, state_length = 1) +
   ease_aes('sine-in-out') +
-  labs(title = 'Figure 4: Number of Crime in Chicago Over 5 Years : {closest_state}',
+  labs(title = 'Figure 4: Number of Crime in Chicago Over 5 Years : [Month: {closest_state}]',
        subtitle = "Top 10 Location")  
 
 animate(anim_plot, 150, fps = 20, width = 780, height = 560)
 ```
 
 ***
-We also sorted and ranked the data, and compiled the top 10 locations with high criminal incidence from 2016 to 2021  into a dynamic bar graph. Through this motion chart, we can visually observe the names of the crime areas, the number of crime incidents, and their changing trends.
-
-We can note that apartments, residence, streets and sidewalks are firmly in the top 4 from 2016 to 2020. They have been the locations with high crime rates during the six-year period. This result also coincides with our previous study of the types of crime that occur most frequently. The top three crime types in Chicago in our study are battery, assault, and other offenses, and these crime types are indeed more likely to occur in these locations.
-
-It is also interesting to note that the number of crimes in apartment and residence had a large increase and reached a peak in 2020 and then dropped sharply to an average level in 2021, while other locations also experiencing a small decrease in crime during 2020. We believe that this trend may be related to the home quarantine policy for the Covid-19 epidemic in 2020.
+In addition, our group also sorted and ranked the data, and compiled the top 10 locations with high criminal incidence from 2017 to 2021 into a dynamic bar graph to get a more in-depth understanding of the crime situation. Through this motion chart, we can visually observe the names of the crime areas, the number of crime incidents, and their changing trends.It is clear that streets and sidewalks are the locations with high crime rates during the five-year period.
 
