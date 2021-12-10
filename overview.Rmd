@@ -85,58 +85,54 @@ This dataset reflects reported incidents of crime (with the exception of murders
 
 #### **Data Processing and Clean**
 
-First we eliminated some variables that we were not interested in. Then, since each year's criminal records are contained in a separate dataset respectively, we created a tidy dataframe containing all criminal records from 2016 to 2021. Also, since our analysis will include some predictions for trend, we split variable "data" and composed new variables as "year","month", and "day" respectively to facilitate our analysis of trends for each year. Here is our data process:
+First we eliminated missisng variables and cleaned the variable names to lower_case names. Then, we tried to filter "arrest" and "domestic" data to select non-domestic closed cases. Since each year's criminal records are contained in a separate dataset respectively, we created a tidy dataframe containing all criminal records from 2017 to 2021. Also, since our analysis will include some predictions for trend, we split variable "data" and composed new variables as "year","month", and "day" respectively to facilitate our analysis of trends for each year. Here is our data process:
 
-```{r roughly data cleaning, message = FALSE}
-# clean data
-crime_2016 =
-   read.csv("./Data/Crimes_-_2016.csv") %>% 
-   drop_na() %>% 
-   janitor::clean_names() %>%
-   filter(arrest=="true",domestic=="true")
+```{r roughly data cleaning, eval = FALSE}
+# clean data 
 crime_2017 =
-   read.csv("./Data/Crimes_-_2017.csv") %>% 
+   read.csv("./data/Crimes_-_2017.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
-   filter(arrest=="true",domestic=="true")
+   filter(arrest=="true",domestic=="false")
 crime_2018 =
-   read.csv("./Data/Crimes_-_2018.csv") %>% 
+   read.csv("./data/Crimes_-_2018.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
-   filter(arrest=="true",domestic=="true")
+   filter(arrest=="true",domestic=="false")
 crime_2019 =
-   read.csv("./Data/Crimes_-_2019.csv") %>% 
+   read.csv("./data/Crimes_-_2019.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
-   filter(arrest=="true",domestic=="true")
+   filter(arrest=="true",domestic=="false")
 crime_2020 =
-   read.csv("./Data/Crimes_-_2020.csv") %>% 
+   read.csv("./data/Crimes_-_2020.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
-   filter(arrest=="true",domestic=="true")
+   filter(arrest=="true",domestic=="false")
 crime_2021 =
-   read.csv("./Data/Crimes_-_2021.csv") %>% 
+   read.csv("./data/Crimes_-_2021.csv") %>% 
    drop_na() %>% 
    janitor::clean_names() %>%
-   filter(arrest=="true",domestic=="true")
+   filter(arrest=="true",domestic=="false")
 
-full_df=
-   do.call("rbind",list(crime_2016,crime_2017,crime_2018,crime_2019,crime_2020,crime_2020,crime_2021)) %>% 
+five_year_data=
+   do.call("rbind",list(crime_2017,crime_2018,crime_2019,crime_2020,crime_2021)) %>% 
    mutate(
       date=strptime(date, "%m/%d/%Y %I:%M:%S %p"),
       date=as.Date(date,"%Y-%m-%d"),
       year = as.numeric(format(date, format = "%Y")),
       month = as.numeric(format(date, format = "%m")),
+      month=month.abb[month],
       day = as.numeric(format(date, format = "%d"))
       ) %>% 
    relocate(year,month,day,.before = date)
-write.csv(full_df,file="./Data/data_clean.csv")
+write.csv(full_df,file="./data/five_year_data.csv")
 ```
 
-The part of resulting data `data_clean` used for analysis can be viewed below.
+The part of resulting data `five_year_data` used for analysis can be viewed below.
 
 ```{r echo=FALSE}
-show_data = read.csv("./Data/data_clean.csv")
+show_data = read.csv("./data/five_year_data.csv")
 datatable(head(show_data,20), rownames = FALSE, filter = "top", 
           options = list(pageLength = 5, scrollX = T, Width = 100))
 
