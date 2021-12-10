@@ -63,8 +63,7 @@ Heat Map{.storyboard}
 
 ```{r, message=FALSE}
 heatmap_plot = crime_full %>%
-  mutate(month = month.abb[as.numeric(month)],
-         month = fct_rev(factor(month, levels = month.abb))) %>% 
+  mutate(month = fct_rev(factor(month, levels = month.abb))) %>% 
   group_by(year, month, day) %>% 
   summarise(n_crimes = n()) %>% 
   mutate(day = as.numeric(day))
