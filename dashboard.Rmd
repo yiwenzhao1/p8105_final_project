@@ -53,9 +53,7 @@ count_overtime %>%
 ```
 
 ***
-The figure shows that the number of crimes in Chicago change over the most recent six years. The range of the number of crimes per year is between 4629 and 10824 from 2016 to 2021. 
-
-We could see that, the peak number of the crimes over time is 2020 with 10824 cases. Basically, the trend went smooth from 2016 to 2020 and went down after 2020.
+This figure shows how the number of crime cases in Chicago changed monthly over the years. According to this graph, 2017, 2018, and 2019 show a similar trend in the number of crimes. The number of crimes per year is between 3,119 and 4,574 from 2017 to 2021. However, the graph presents a significant trend difference in 2020 and 2021. The number of crimes in 2020 stay in the same trend as previous years’ in January and February but drop immediately in March. The number of crimes reached the lowest point in April 2020, with only 1,119 crime cases this month. The number of crimes in 2021 seems lower than in 2020 in this graph. Since the crime case data of 2021 is only to the present, the database does not include crimes that happened in December 2021. Considering the start time of the COVID-19 pandemic coincide with the drop in the number of crimes, the rapid decrease of crime cases from March 2020 is probably associated with the prevalence of COVID-19.
 
 Heat Map{.storyboard}
 =========================================
@@ -91,7 +89,7 @@ ggplotly(heatmap_plot + theme(legend.position = "none"))
 ```
 
 ***
-This heat map clearly shows that the crime rate has a significant increase in 2020, and the significant increase of crime in Chicago is probably associated with the COVID-19 prevalence. In 2021, the total crime rates is a little bit lower than previous year. In general, there is no significant differences on crime rates with diffeernt months. 
+This heat map gives a better visualization for the monthly density trend of crimes from 2017 to 2021 in Chicago. It clearly shows that in 2017, 2018, 2019, and the first two months in 2020, there is a much higher density of crimes happened during the year. The crime case density drops rapidly in the middle of March in 2020 and reaches the lowest point in April 2020. Comparing the density of crimes in 2017, 2018, and 2019, we can see that crimes are more likely to happen in the middle of the year (from May to September) and are less likely to happen at the beginning and the end of the year. This graph also clearly shows that, generally, Christmas Day has the lowest crime rate of the year.
 
 Word Clouding{.storyboard}
 =========================================
@@ -168,9 +166,9 @@ animate(anim_plot, 150, fps = 20, width = 780, height = 560)
 ```
 
 ***
-<font-size:12pt>
 
 In addition, our group also sorted and ranked the data, and compiled the top 10 locations with high criminal incidence from 2017 to 2021 into a dynamic bar graph to get a more in-depth understanding of the crime situation. Through this motion chart, we can visually observe the names of the crime areas, the number of crime incidents, and their changing trends.It is clear that streets and sidewalks are the locations with high crime rates during the five-year period.
+It is also interesting to note that these two locations always reach a peak in January, July and August, respectively, over the five-year period, and then drop extremely quickly to a low in December. Meanwhile, crime rates in stores (department stores, mall retail stores and food stores) and restaurants can be relatively high in January and December. The number of cases in stores and restaurants will be much higher in December and January, while crime in apartments and residential areas will be more frequent at other times.
 
-</p>
+
 
