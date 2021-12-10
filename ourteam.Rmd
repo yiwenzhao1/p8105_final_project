@@ -30,4 +30,4 @@ The Github repository for the project report:
 https://github.com/yiwenzhao1/p8105_final_project_report.
 
 ## **Challenges**
-
+For our first challenge, we tried to filter the data with domestic cases since they contained fewer data. When we did the data analysis as scatter plot and heatmap later on, the domestic cases over 5 years didn't give much information on trends and we couldn't process more visual data with one primary_type leading the result. Then we looked back our data cleaning and realized there's limited places and crime types happening for domestic cases and we changed our filter condition to non-domestic cases. 
