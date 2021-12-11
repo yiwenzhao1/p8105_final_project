@@ -160,15 +160,29 @@ In addition, we want to explore the association between weather and the number o
    Through our visual analytics, we can quickly analyze crime incidents and find patterns related to crime incidents to provide inspiration to preventing crime, which can helping Chicago to effectively improve the occurrence of crime incidents and help them create a safer city.
 
 ## **Main Results**
-The range of the number of crimes per year is between 4,629 and 10,824 from 2016 to 2021. The peak number of the crimes over time is in 2020 with 10,824 cases. The crime rate has a significant increase in 2020, and the significant increase of crime in Chicago is probably associated with the COVID-19 prevalence. 
 
-In Chicago, the most amount of crimes happens in apartments, residence, streets and sidewalks.The top three crime types in Chicago in our study are battery, assault, and other offenses, and these crime types are indeed more likely to occur in these locations.Battery means the intentional use of force or violence against another. Thus, people in Chicago need to pay more attention on others’ intentionally physical harm. 
+      How does the crime amount change over these 5 years? Is there any significant change in the number of crimes?What are the possible reasons that cause the change?
 
-According to the distribution of Crime Rate From 2017 to 2021 in Chicago, the most of crimes is concentrated in the central and south side of this city. Chicago’s persistently high crime rate is inextricably linked to the density of gangs. It is reasonable for us to suspect that the concentration of gangs is one of the reasons for the high level of violence in Chicago. Thus, we would like to suggest people who live in southern Chicago to be beware of the personal safety.
+According to our study, in 2017, 2018, 2019, and the first two months in 2020, there is a much higher density of crimes happened during the year. The crime case density drops rapidly in the middle of March in 2020 and reaches the lowest point in April 2020. The crime rate has a significant increase in 2020, and the significant increase of crime in Chicago is probably associated with the COVID-19 prevalence.
+
+
+      Which type of crime is most likely to occur in Chicago? In what kind of location in Chicago does the most amount of crime happen?
+
+
+The most frequently occurring type of crime in Chicago from 2017 to 2021 is narcotics, followed by weapons violation, theft, battery, assault, other offense, and criminal trespass etc.Also, our animated bar graph shows that streets and sidewalks are the locations with high crime rates during the five-year period.
+
+
+      Is there any association between weather and the number of crime occurring in Chicago?
+
+ Unfortunately, there is no evidence to show there is a direct association between weather condition and criminal incidence.
 
 ## **Conclusion**
 
+The crime rate kept shockingly high in the first 3 years. Even in the first semester of 2020, it followed the same trend as preceding years. Then, as the pandemic broke out, the number of crimes cases dramtically fell as a result of lockdown policy, which was a quite safer time compared to the ordinary days.
 
+As the line graph shows, it is common that hundreds of crime cases happen in Chicago almost every day, especially summer time starting from May to August when the crime rates can reach high peaks. Among them, narcotics, weapons violations, battery and theft consist of the most frequent criminal types. Besides, streets and sidewalks, where there are few shelters and individuals are easily exposed, are the most dangerous locations.
+
+Thus, in case of unexpected violence, here we provide some suggestions to properly protect yourselevs. Firstly, stay home after sunset. Secondly, stay away from crossroads, try to use the shelters around to avoid being targeted. Be alert to the dark streets.
 
 </p>
 
