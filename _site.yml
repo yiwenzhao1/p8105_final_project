@@ -18,7 +18,7 @@ navbar:
     - text: "Data"
       href: https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2/data
     - icon: fab fa-youtube
-      href: website_screen_cast.html
+      href: https://youtu.be/IxA_jU9RwZQ
     - icon: fa-envelope fa-lg
       href: mailto:zyt1102@cumc.columbia.edu
     - icon: fa-github fa-lg
